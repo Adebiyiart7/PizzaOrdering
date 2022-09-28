@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 
 import AppTextInput from "./AppTextInput";
 import { AntDesign } from "@expo/vector-icons";

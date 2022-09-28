@@ -1,8 +1,8 @@
 export default {
-  appBackground: "#f3f4f8",
+  appBackground: "#f3f4f0",
   primary: "#e60000",
   lightPrimary: "#ff3333",
-  secondary: "",
+  secondary: "#324276",
   lightBorder: "#e1e8ed",
   lightGray: "#676883",
   mediumGray: "#6e6969",
