@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./app/components/Screen";
@@ -11,12 +11,14 @@ import OrderCard from "./app/components/OrderCard";
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <OrderCard
-        onPress={() => console.log("Hello")}
-        image={require("./trash/images/img-01.jpg")}
-        title="Australian Pizza"
-        subTitle="Our famous meat pizza is topped"
-        price={"2,000"}
+      <TextInput
+        keyboardType="numeric"
+        placeholder="First Name"
+        style={{
+          paddingTop: 10,
+          borderBottomColor: "#CCC",
+          borderBottomWidth: 1,
+        }}
       />
     </Screen>
   );

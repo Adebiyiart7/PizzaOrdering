@@ -3,15 +3,11 @@ import React from "react";
 
 import colors from "../config/colors";
 
-const AppTextInput = ({ icon, placeholder, ...otherProps }) => {
+const AppTextInput = ({ icon, ...otherProps }) => {
   return (
     <View style={styles.container}>
       <View style={styles.icon}>{icon}</View>
-      <TextInput
-        style={styles.input}
-        placeholder={placeholder}
-        {...otherProps}
-      />
+      <TextInput style={styles.input} {...otherProps} />
     </View>
   );
 };
