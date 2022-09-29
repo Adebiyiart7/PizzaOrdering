@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 import Screen from "./app/components/Screen";
@@ -7,7 +6,11 @@ import Chip from "./app/components/Chip";
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <Chip />
+      <Chip text={"Pizza"} />
+      {/* <Chip text={"Pizza"} />
+      <Chip text={"Pizza"} />
+      <Chip text={"Pizza"} />
+      <Chip text={"Pizza"} /> */}
     </Screen>
   );
 }
