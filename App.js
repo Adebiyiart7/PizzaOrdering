@@ -1,16 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./app/components/Screen";
 import Chip from "./app/components/Chip";
+import appStyles from "./app/config/styles";
+import colors from "./app/config/colors";
 
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
       <Chip text={"Pizza"} />
-      {/* <Chip text={"Pizza"} />
-      <Chip text={"Pizza"} />
-      <Chip text={"Pizza"} />
-      <Chip text={"Pizza"} /> */}
     </Screen>
   );
 }
