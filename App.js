@@ -10,7 +10,7 @@ import AppTitle from "./app/components/AppTitle";
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <AppTitle text={"my order"} />
+      <Chip text={"Pizza"} onPress={() => console.log("Tapped")} />
     </Screen>
   );
 }

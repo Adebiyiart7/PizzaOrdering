@@ -1,19 +1,23 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
 
 import colors from "../config/colors";
 
-const Chip = ({ text, bgColor, icon }) => {
+const Chip = ({ text, bgColor, icon, onPress }) => {
   return (
-    <View
+    <TouchableHighlight
+      underlayColor={colors.appBackground}
+      onPress={onPress}
       style={[
         styles.chip,
         { backgroundColor: bgColor ? bgColor : colors.white },
       ]}
     >
-      <Text style={styles.text}>{text}</Text>
-      {icon && <Text style={styles.icon}>{icon}</Text>}
-    </View>
+      <View>
+        <Text style={styles.text}>{text}</Text>
+        {icon && <Text style={styles.icon}>{icon}</Text>}
+      </View>
+    </TouchableHighlight>
   );
 };
 
