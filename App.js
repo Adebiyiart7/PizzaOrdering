@@ -6,16 +6,33 @@ import Chip from "./app/components/Chip";
 import appStyles from "./app/config/styles";
 import colors from "./app/config/colors";
 import AppTitle from "./app/components/AppTitle";
+import OrderCard from "./app/components/OrderCard";
 
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <Chip text={"Pizza"} onPress={() => console.log("Tapped")} />
+      <OrderCard
+        onPress={() => console.log("Hello")}
+        image={require("./trash/images/img-01.jpg")}
+        title="Australian Pizza"
+        subTitle="Our famous meat pizza is topped"
+        price={"2,000"}
+      />
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({});
+
+/**
+ *       <OrderCard
+        onPress={() => console.log("Hello")}
+        image={require("./trash/images/img-01.jpg")}
+        title="Australian Pizza"
+        subTitle="Our famous meat pizza is topped"
+        price={"2,000"}
+      />
+ */
 
 /**
  *           <Card
