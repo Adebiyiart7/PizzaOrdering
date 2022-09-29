@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { StyleSheet, Text } from "react-native";
+
 import colors from "../config/colors";
 
 const AppTitle = ({ text }) => {

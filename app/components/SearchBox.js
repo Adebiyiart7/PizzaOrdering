@@ -1,8 +1,8 @@
 import React from "react";
 import { View } from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 import AppTextInput from "./AppTextInput";
-import { AntDesign } from "@expo/vector-icons";
 import appStyles from "../config/styles";
 
 const SearchBox = ({ placeholder, onChangeText }) => {

@@ -1,5 +1,6 @@
-import { StyleSheet, Text, TouchableHighlight } from "react-native";
 import React from "react";
+import { StyleSheet, Text, TouchableHighlight } from "react-native";
+
 import colors from "../config/colors";
 
 const AppButton = ({ title, onPress }) => {
