@@ -5,11 +5,12 @@ import Screen from "./app/components/Screen";
 import Chip from "./app/components/Chip";
 import appStyles from "./app/config/styles";
 import colors from "./app/config/colors";
+import AppTitle from "./app/components/AppTitle";
 
 export default function App() {
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <Chip text={"Pizza"} />
+      <AppTitle text={"my order"} />
     </Screen>
   );
 }
