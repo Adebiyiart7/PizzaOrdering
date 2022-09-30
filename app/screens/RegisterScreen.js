@@ -1,68 +1,64 @@
-import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Formik } from "formik";
+import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import AppTextInput from "../components/forms/AppTextInput";
 import defaultStyles from "../config/defaultStyles";
-import AppButton from "../components/AppButton";
+import AppFormField from "../components/forms/AppFormField";
+import AppForm from "../components/forms/AppForm";
+import SubmitButton from "../components/forms/SubmitButton";
+
+// const emailRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   phoneNumber: Yup.string().required().min(3).max(20).label("Phone Number"),
-  password: Yup.string().required().min(8).max(20).matches().label("Password"),
+  password: Yup.string().required().min(8).max(20).label("Password"),
 });
 
 const RegisterScreen = () => {
   return (
-    <Formik
+    <AppForm
       initialValues={{
         email: "",
         phoneNumber: "",
         password: "",
       }}
       onSubmit={(values) => console.log(values)}
+      validationSchema={validationSchema}
     >
-      {({ handleSubmit, handleChange }) => (
-        <>
-          <Text style={styles.label}>Email</Text>
-          <AppTextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            placeholder="Email"
-            keyboardType="email-address"
-            icon={
-              <MaterialCommunityIcons name="email" {...defaultStyles.icon} />
-            }
-            onChangeText={handleChange("email")}
-          />
-          <Text style={styles.label}>Phone Number</Text>
-          <AppTextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            placeholder="Phone Number"
-            keyboardType="numeric"
-            icon={
-              <MaterialCommunityIcons name="phone" {...defaultStyles.icon} />
-            }
-            onChangeText={handleChange("phoneNumber")}
-          />
-          <Text style={styles.label}>Password</Text>
-          <AppTextInput
-            autoCapitalize="none"
-            autoCorrect={false}
-            secureTextEntry
-            icon={<MaterialCommunityIcons name="key" {...defaultStyles.icon} />}
-            onChangeText={handleChange("password")}
-          />
-          <AppButton title={"Register"} onPress={handleSubmit} />
-        </>
-      )}
-    </Formik>
+      <>
+        <AppFormField
+          label={"Email"}
+          name={"email"}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Email"
+          keyboardType="email-address"
+          icon={<MaterialCommunityIcons name="email" {...defaultStyles.icon} />}
+        />
+        <AppFormField
+          label={"Phone Number"}
+          name={"phoneNumber"}
+          autoCapitalize="none"
+          autoCorrect={false}
+          placeholder="Phone Number"
+          keyboardType="numeric"
+          icon={<MaterialCommunityIcons name="phone" {...defaultStyles.icon} />}
+        />
+        <AppFormField
+          label={"Password"}
+          name={"password"}
+          autoCapitalize="none"
+          autoCorrect={false}
+          secureTextEntry
+          icon={<MaterialCommunityIcons name="key" {...defaultStyles.icon} />}
+        />
+
+        <SubmitButton title="Register" />
+      </>
+    </AppForm>
   );
 };
 
 export default RegisterScreen;
-
-const styles = StyleSheet.create({});

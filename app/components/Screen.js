@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import Constants from "expo-constants";
 
 import colors from "../config/colors";
 
 const Screen = ({ children, style }) => {
-  return <View style={[styles.screen, style]}>{children}</View>;
+  return <ScrollView style={[styles.screen, style]}>{children}</ScrollView>;
 };
 
 const styles = StyleSheet.create({

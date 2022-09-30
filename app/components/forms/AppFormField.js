@@ -1,16 +1,31 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { useFormikContext } from "formik";
 
+import Label from "./Label";
+import ErrorMessage from "./ErrorMessage";
 import AppTextInput from "./AppTextInput";
 
-const AppFormField = () => {
+const AppFormField = ({ name, label, ...otherProps }) => {
+  const { handleChange, setFieldTouched, errors, touched } = useFormikContext();
+
   return (
-    <View>
-      <AppTextInput />
+    <View style={styles.container}>
+      <Label label={label} />
+      <AppTextInput
+        onBlur={() => setFieldTouched(name)}
+        onChangeText={handleChange(name)}
+        {...otherProps}
+      />
+      <ErrorMessage error={errors[name]} visible={touched[name]} />
     </View>
   );
 };
 
-export default AppFormField;
+const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 12,
+  },
+});
 
-const styles = StyleSheet.create({});
+export default AppFormField;
