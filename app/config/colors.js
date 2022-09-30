@@ -1,5 +1,6 @@
 export default {
-  appBackground: "#f3f4f0",
+  // appBackground: "#f2f3f7",
+  appBackground: "#f3f4f8",
   black: "#000",
   danger: "#e60000",
   darkGray: "#1c1e21",
