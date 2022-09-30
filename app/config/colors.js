@@ -7,6 +7,7 @@ export default {
   lightBorder: "#e1e8ed",
   lightGray: "#676883",
   lightPrimary: "#ff3333",
+  mediumBorder: "#c2d1db",
   mediumGray: "#6e6969",
   primary: "#e60000",
   secondary: "#324276",

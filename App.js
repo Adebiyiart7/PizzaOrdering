@@ -1,20 +1,18 @@
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { createStackNavigator } from "@react-navigation/stack";
-import colors from "./app/config/colors";
+
+import { screenOptions } from "./app/navigation";
 
 // tab screens
-import HomeScreen from "./app/screens/HomeScreen";
-import PromotionsScreen from "./app/screens/PromotionsScreen";
+// import PromotionsScreen from "./app/screens/PromotionsScreen";
 import OrderScreen from "./app/screens/OrderScreen";
 import SettingsScreen from "./app/screens/SettingsScreen";
 import ProfileScreen from "./app/screens/ProfileScreen";
 
-// screen
-import RegisterScreen from "./app/screens/RegisterScreen";
+import { StackNavigators } from "./app/navigation/StackNavigators";
 
-// screen names
+// Tab screen names
 const homeName = "Home";
 const promotionsName = "Promotions";
 const orderName = "My Order";
@@ -22,19 +20,9 @@ const settingsName = "Settings";
 const profileName = "Profile";
 
 const Tab = createBottomTabNavigator();
-const Stack = createStackNavigator();
 
-const screenOptions = {
-  headerShown: false,
-  tabBarActiveTintColor: colors.primary,
-  tabBarInactiveTintColor: colors.mediumGray,
-  tabBarIconStyle: {
-    marginTop: 5,
-  },
-  tabBarLabelStyle: {
-    fontSize: 11,
-    paddingBottom: 5,
-  },
+const OtherScreensNavigators = () => {
+  return <StackNavigators />;
 };
 
 export default function App() {
@@ -53,7 +41,7 @@ export default function App() {
                 break;
 
               case promotionsName:
-                iconName = focused ? "home" : "home-outline";
+                iconName = focused ? "star-box" : "star-box-outline";
                 break;
 
               case orderName:
@@ -81,10 +69,14 @@ export default function App() {
       >
         <Tab.Screen
           name={homeName}
-          component={HomeScreen}
+          component={OtherScreensNavigators}
           options={screenOptions}
         />
-        {/* <Tab.Screen name={promotionsName} component={PromotionsScreen} /> */}
+        {/* <Tab.Screen
+          name={promotionsName}
+          component={PromotionsScreen}
+          options={screenOptions}
+        /> */}
         <Tab.Screen
           name={orderName}
           component={OrderScreen}
@@ -100,10 +92,7 @@ export default function App() {
           component={ProfileScreen}
           options={screenOptions}
         />
-        <Stack.Screen name="Register" component={RegisterScreen} />
       </Tab.Navigator>
-      {/* <Stack.Navigator>
-      </Stack.Navigator> */}
     </NavigationContainer>
   );
 }
