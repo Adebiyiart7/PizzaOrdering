@@ -1,18 +1,19 @@
 import { StyleSheet } from "react-native";
 
 import colors from "../../config/colors";
+import defaultStyles from "../../config/defaultStyles";
 
 export default styles = StyleSheet.create({
   card: {
     width: "100%",
     height: 110,
     flexDirection: "row",
-    borderRadius: 20,
-    justifyContent: "space-between",
-    backgroundColor: colors.white,
+    borderRadius: defaultStyles.borderRadius,
     overflow: "hidden",
     borderColor: colors.lightBorder,
     borderWidth: 1,
+    backgroundColor: colors.white,
+    justifyContent: "space-between",
   },
   details: {
     flex: 7,

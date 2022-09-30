@@ -4,7 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import styles from "./styles";
 
-const Card = ({ image, title, subTitle, price, weight }) => {
+const Card = ({ image, title, subTitle, price }) => {
   let [numberOfItems, setNumberOfItems] = useState(1);
 
   const handleIncrement = () => {
