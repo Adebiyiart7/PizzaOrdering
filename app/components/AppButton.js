@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Text, TouchableHighlight } from "react-native";
 
 import colors from "../config/colors";
+import defaultStyles from "../config/defaultStyles";
 
 const AppButton = ({ title, onPress }) => {
   return (
@@ -17,17 +18,19 @@ const AppButton = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.primary,
+    height: 56,
     width: "100%",
     paddingVertical: 15,
-    borderRadius: 15,
+    justifyContent: "center",
+    backgroundColor: colors.primary,
+    borderRadius: defaultStyles.borderRadius,
   },
   text: {
     fontSize: 18,
-    color: colors.white,
-    textAlign: "center",
-    textTransform: "uppercase",
     fontWeight: "bold",
+    textAlign: "center",
+    color: colors.white,
+    textTransform: "uppercase",
   },
 });
 

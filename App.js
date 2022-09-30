@@ -1,25 +1,22 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import { useState } from "react";
+import { StyleSheet, Button, Text, View, TextInput } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "./app/components/Screen";
 import Chip from "./app/components/Chip";
-import appStyles from "./app/config/styles";
 import colors from "./app/config/colors";
 import AppTitle from "./app/components/AppTitle";
 import OrderCard from "./app/components/OrderCard";
+import AppModal from "./app/components/AppModal";
+import AppFormField from "./app/components/forms/AppFormField";
+import RegisterScreen from "./app/screens/RegisterScreen";
 
 export default function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <Screen style={{ paddingHorizontal: 16, flex: 1 }}>
-      <TextInput
-        keyboardType="numeric"
-        placeholder="First Name"
-        style={{
-          paddingTop: 10,
-          borderBottomColor: "#CCC",
-          borderBottomWidth: 1,
-        }}
-      />
+      <RegisterScreen />
     </Screen>
   );
 }
@@ -27,6 +24,14 @@ export default function App() {
 const styles = StyleSheet.create({});
 
 /**
+ * 
+ * 
+ * 
+      <Button title="Open" onPress={() => setShowModal(true)} />
+      <AppModal showModal={showModal} setShowModal={setShowModal} />
+ * 
+ * 
+ * 
  *       <OrderCard
         onPress={() => console.log("Hello")}
         image={require("./trash/images/img-01.jpg")}

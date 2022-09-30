@@ -5,4 +5,5 @@ export default {
     color: colors.mediumGray,
     size: 24,
   },
+  borderRadius: 10,
 };

@@ -1,7 +1,8 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 
-import colors from "../config/colors";
+import colors from "../../config/colors";
+import defaultStyles from "../../config/defaultStyles";
 
 const AppTextInput = ({ icon, ...otherProps }) => {
   return (
@@ -18,10 +19,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     backgroundColor: colors.white,
-    borderRadius: 10,
+    borderRadius: defaultStyles.borderRadius,
     paddingVertical: 10,
     paddingHorizontal: 16,
     overflow: "hidden",
+    height: 56,
   },
   icon: {
     marginRight: 8,
