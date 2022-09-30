@@ -51,6 +51,7 @@ const RegisterScreen = () => {
           name={"password"}
           autoCapitalize="none"
           autoCorrect={false}
+          placeholder="Password"
           secureTextEntry
           icon={<MaterialCommunityIcons name="key" {...defaultStyles.icon} />}
         />
