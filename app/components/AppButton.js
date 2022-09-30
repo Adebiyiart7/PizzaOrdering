@@ -4,11 +4,12 @@ import { StyleSheet, Text, TouchableHighlight } from "react-native";
 import colors from "../config/colors";
 import defaultStyles from "../config/defaultStyles";
 
-const AppButton = ({ title, onPress }) => {
+const AppButton = ({ title, onPress, style }) => {
+  console.log(style);
   return (
     <TouchableHighlight
       underlayColor={colors.lightPrimary}
-      style={styles.button}
+      style={[styles.button, style]}
       onPress={onPress}
     >
       <Text style={styles.text}>{title}</Text>

@@ -1,5 +1,4 @@
 import React from "react";
-import { StyleSheet } from "react-native";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -56,7 +55,7 @@ const RegisterScreen = () => {
           icon={<MaterialCommunityIcons name="key" {...defaultStyles.icon} />}
         />
 
-        <SubmitButton title="Register" />
+        <SubmitButton style={{ marginVertical: 12 }} title="Register" />
       </>
     </AppForm>
   );
