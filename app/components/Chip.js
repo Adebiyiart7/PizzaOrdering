@@ -3,18 +3,21 @@ import { StyleSheet, Text, View, TouchableHighlight } from "react-native";
 
 import colors from "../config/colors";
 
-const Chip = ({ text, bgColor, icon, onPress }) => {
+const Chip = ({ text, focused, icon, onPress, style }) => {
   return (
     <TouchableHighlight
       underlayColor={colors.appBackground}
       onPress={onPress}
       style={[
+        style,
         styles.chip,
-        { backgroundColor: bgColor ? bgColor : colors.white },
+        { backgroundColor: focused ? colors.primary : colors.white },
       ]}
     >
       <View>
-        <Text style={styles.text}>{text}</Text>
+        <Text style={[styles.text, { color: focused && colors.white }]}>
+          {text}
+        </Text>
         {icon && <Text style={styles.icon}>{icon}</Text>}
       </View>
     </TouchableHighlight>
@@ -28,6 +31,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 7,
     borderRadius: 16,
+    borderRadius: 6,
     alignSelf: "flex-start",
   },
   icon: {
