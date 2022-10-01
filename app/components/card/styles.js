@@ -52,7 +52,7 @@ export default styles = StyleSheet.create({
   },
   subTitle: {
     color: colors.lightGray,
-    lineHeight: 13,
+    lineHeight: 16,
     paddingTop: 5,
     fontSize: 13,
   },

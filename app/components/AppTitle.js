@@ -9,7 +9,7 @@ const AppTitle = ({ text, style }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
     color: colors.darkGray,
     textTransform: "capitalize",

@@ -3,11 +3,11 @@ import React from "react";
 import Screen from "../Screen";
 import TopNavbar from "./TopNavbar";
 
-const ScreenContainer = ({ children }) => {
+const ScreenContainer = ({ children, style }) => {
   return (
-    <Screen style={styles.screenContainer}>
-      <TopNavbar />
-      <ScrollView>{children}</ScrollView>
+    <Screen style={[styles.screenContainer, style]}>
+      {/* <TopNavbar /> */}
+      {children}
     </Screen>
   );
 };
