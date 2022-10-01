@@ -4,10 +4,18 @@ import { Text, View, Image, TouchableHighlight } from "react-native";
 import styles from "./styles";
 import colors from "../../config/colors";
 
-const Card = ({ image, title, subTitle, leftInfo, rightInfo, onPress }) => {
+const Card = ({
+  image,
+  title,
+  subTitle,
+  leftInfo,
+  rightInfo,
+  onPress,
+  style,
+}) => {
   return (
     <TouchableHighlight underlayColor={colors.white} onPress={onPress}>
-      <View style={styles.card}>
+      <View style={[styles.card, style]}>
         <View style={styles.details}>
           <Text numberOfLines={1} style={styles.title}>
             {title}
