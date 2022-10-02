@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   container: {
-    paddingHorizontal: 12,
+    paddingHorizontal: defaultStyles.screenPadding,
   },
   filter: {
     flexDirection: "row",

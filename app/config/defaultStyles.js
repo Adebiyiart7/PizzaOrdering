@@ -6,4 +6,5 @@ export default {
     size: 24,
   },
   borderRadius: 10,
+  screenPadding: 12,
 };
