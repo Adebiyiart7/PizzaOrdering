@@ -1,7 +1,14 @@
+import { Provider } from "react-redux";
+
+import { store } from "./app/store/store";
 import TabNavigation from "./app/navigation/TabNavigation";
 
 export default function App() {
-  return <TabNavigation />;
+  return (
+    <Provider store={store}>
+      <TabNavigation />
+    </Provider>
+  );
 }
 
 export const dishes = [
