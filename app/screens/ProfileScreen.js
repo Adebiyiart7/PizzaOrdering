@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import Screen from "../components/Screen";
 import ListItem from "../components/ListItem";
@@ -23,7 +23,7 @@ const Profile = () => {
             <MaterialCommunityIcons
               name="map-marker-outline"
               size={24}
-              color={colors.mediumGray}
+              color={colors.primary}
             />
           }
           title="Delivery Address"
@@ -37,7 +37,7 @@ const Profile = () => {
             <MaterialCommunityIcons
               name="shopping-outline"
               size={24}
-              color={colors.mediumGray}
+              color={colors.primary}
             />
           }
           title="My Order"
@@ -48,7 +48,7 @@ const Profile = () => {
             <MaterialCommunityIcons
               name="progress-clock"
               size={15}
-              color={colors.mediumGray}
+              color={colors.primary}
             />
           }
           rightIcon={
@@ -58,6 +58,18 @@ const Profile = () => {
               color={colors.secondary}
             />
           }
+        />
+      </View>
+      <View style={styles.listItem}>
+        <ListItem
+          leftIcon={
+            <MaterialCommunityIcons
+              name="logout"
+              size={24}
+              color={colors.primary}
+            />
+          }
+          title="Logout"
         />
       </View>
       <View style={styles.footer}>

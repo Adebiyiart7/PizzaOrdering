@@ -59,7 +59,7 @@ const Home = () => {
             <MaterialCommunityIcons
               name="filter-outline"
               color={colors.primary}
-              size={24}
+              size={20}
             />
             <Text style={styles.filterText}>Filter</Text>
           </TouchableOpacity>

@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../config/colors";
 
@@ -22,9 +21,11 @@ const ListItem = ({
         <Text numberOfLines={1} style={styles.title}>
           {title}
         </Text>
-        <Text numberOfLines={subTitleNumLine} style={styles.subTitle}>
-          {subTitle}
-        </Text>
+        {subTitle && (
+          <Text numberOfLines={subTitleNumLine} style={styles.subTitle}>
+            {subTitle}
+          </Text>
+        )}
         {third && (
           <Text numberOfLines={1} style={styles.third}>
             {thirdIcon && thirdIcon}
@@ -47,7 +48,7 @@ const ListItem = ({
 
 const styles = StyleSheet.create({
   center: {
-    alignSelf: "flex-start",
+    alignSelf: "center",
     marginLeft: 12,
   },
   container: {
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 16,
   },
   third: {
     top: 5,
