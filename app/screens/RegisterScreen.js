@@ -1,35 +1,49 @@
 import React from "react";
 import * as Yup from "yup";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useSelector, useDispatch } from "react-redux";
 
 import defaultStyles from "../config/defaultStyles";
 import AppFormField from "../components/forms/AppFormField";
 import AppForm from "../components/forms/AppForm";
 import SubmitButton from "../components/forms/SubmitButton";
+import { register } from "../features/auth/authSlice";
 
 // const emailRegExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
-  phoneNumber: Yup.string().required().min(3).max(20).label("Phone Number"),
+  phone_number: Yup.string().required().min(3).max(20).label("Phone Number"),
   password: Yup.string().required().min(8).max(20).label("Password"),
 });
 
 const RegisterScreen = () => {
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isSuccess, isError, message } = useSelector(
+    (state) => state.auth
+  );
+
+  console.log(isError);
+  console.log(isLoading);
+  console.log(isSuccess);
+  console.log(message);
+
   return (
     <AppForm
       initialValues={{
         email: "",
-        phoneNumber: "",
+        phone_number: "",
         password: "",
       }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => dispatch(register(values))}
       validationSchema={validationSchema}
     >
       <>
         <AppFormField
           label={"Email"}
           name={"email"}
+          value="adebiyiartworld@gmail.com"
           autoCapitalize="none"
           autoCorrect={false}
           placeholder="Email"
@@ -38,7 +52,8 @@ const RegisterScreen = () => {
         />
         <AppFormField
           label={"Phone Number"}
-          name={"phoneNumber"}
+          name={"phone_number"}
+          value="09029242729"
           autoCapitalize="none"
           autoCorrect={false}
           placeholder="Phone Number"
@@ -48,6 +63,7 @@ const RegisterScreen = () => {
         <AppFormField
           label={"Password"}
           name={"password"}
+          value="password"
           autoCapitalize="none"
           autoCorrect={false}
           placeholder="Password"

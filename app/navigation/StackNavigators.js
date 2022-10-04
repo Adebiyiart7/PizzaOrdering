@@ -10,11 +10,11 @@ import LoginScreen from "../screens/LoginScreen";
 export const StackNavigators = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
+      {/* <Stack.Screen
         options={screenOptions}
         name="Feed"
         component={HomeScreen}
-      />
+      /> */}
       <Stack.Screen
         options={screenOptions}
         name="Register"

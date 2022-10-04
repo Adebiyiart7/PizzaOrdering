@@ -5,7 +5,6 @@ import colors from "../config/colors";
 import defaultStyles from "../config/defaultStyles";
 
 const AppButton = ({ title, onPress, style }) => {
-  console.log(style);
   return (
     <TouchableHighlight
       underlayColor={colors.lightPrimary}

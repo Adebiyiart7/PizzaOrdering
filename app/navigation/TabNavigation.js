@@ -29,7 +29,7 @@ const TabNavigation = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={profileName}
+        initialRouteName={homeName}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color }) => {
             let iconName;
